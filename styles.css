@@ -95,3 +95,96 @@ ol, ul { list-style: none; }
   opacity: 0.9;
   text-decoration: none;
 }
+
+/* ─── Sections ───────────────────────────────────── */
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section {
+  padding: var(--section-gap) 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.section:last-child {
+  border-bottom: none;
+}
+
+.section-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+/* ─── About ──────────────────────────────────────── */
+#about p {
+  color: var(--text-body);
+  line-height: 1.75;
+  font-size: 1rem;
+}
+
+/* ─── What I Do ──────────────────────────────────── */
+.do-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.do-list li {
+  background: var(--bg-card);
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  color: var(--text-body);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+/* ─── Experience ─────────────────────────────────── */
+.timeline {
+  border-left: 2px solid var(--accent);
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.timeline-company {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.timeline-meta {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin: 0.15rem 0 0.35rem;
+}
+
+.timeline-desc {
+  font-size: 0.9rem;
+  color: var(--text-body);
+}
+
+/* ─── Contact ────────────────────────────────────── */
+.section--contact {
+  text-align: center;
+  padding-bottom: 4rem;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.contact-links a {
+  color: var(--accent);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
