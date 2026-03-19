@@ -1,0 +1,97 @@
+/* ─── Variables ─────────────────────────────────── */
+:root {
+  --accent: #6366f1;
+  --accent-dark: #4f46e5;
+  --text: #0f172a;
+  --text-muted: #64748b;
+  --text-body: #334155;
+  --border: #e2e8f0;
+  --bg: #f8fafc;
+  --bg-card: #f1f5f9;
+  --max-width: 640px;
+  --section-gap: 3rem;
+}
+
+/* ─── Reset ─────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text-body);
+  line-height: 1.6;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+ol, ul { list-style: none; }
+
+/* ─── Hero ───────────────────────────────────────── */
+.hero {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+  color: white;
+  padding: 5rem 1.5rem 4rem;
+  text-align: center;
+}
+
+.hero-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.35);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.8rem;
+  border-radius: 100px;
+  margin-bottom: 1.25rem;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 6vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.4rem;
+}
+
+.hero-title {
+  font-size: 1rem;
+  opacity: 0.8;
+  margin-bottom: 0.25rem;
+}
+
+.hero-location {
+  font-size: 0.85rem;
+  opacity: 0.65;
+  letter-spacing: 0.03em;
+  margin-bottom: 1.25rem;
+}
+
+.hero-tagline {
+  font-size: 1.1rem;
+  opacity: 0.92;
+  max-width: 380px;
+  margin: 0 auto 2rem;
+  line-height: 1.5;
+}
+
+.btn-primary {
+  display: inline-block;
+  background: white;
+  color: var(--accent-dark);
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.7rem 1.6rem;
+  border-radius: 6px;
+  transition: opacity 0.15s;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+  text-decoration: none;
+}
