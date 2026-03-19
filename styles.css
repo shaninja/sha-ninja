@@ -122,11 +122,108 @@ main {
   margin-bottom: 1rem;
 }
 
+/* ─── Stack Matrix ───────────────────────────────── */
+.section--matrix { }
+
+.matrix {
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.matrix-top {
+  display: flex;
+  margin-bottom: 4px;
+}
+
+.matrix-corner {
+  width: 42px;
+  flex-shrink: 0;
+}
+
+.matrix-col-labels {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 4px;
+}
+
+.matrix-col-labels span {
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.matrix-main {
+  display: flex;
+  gap: 4px;
+}
+
+.matrix-row-labels {
+  width: 42px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.matrix-row-labels span {
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  height: 34px;
+}
+
+.matrix-cells {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 34px);
+  gap: 4px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.mc { border-radius: 3px; background: #c7d2fe; }
+.mc.c2 { background: #a5b4fc; }
+.mc.c3 { background: #818cf8; }
+
+@keyframes matrix-scan {
+  0%   { left: -4%;  opacity: 0; }
+  5%   { opacity: 1; }
+  95%  { opacity: 1; }
+  100% { left: 104%; opacity: 0; }
+}
+
+.matrix-scan {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, transparent, white 30%, white 70%, transparent);
+  opacity: 0.7;
+  filter: blur(2px);
+  animation: matrix-scan 3s ease-in-out infinite;
+  z-index: 2;
+  pointer-events: none;
+}
+
 /* ─── About ──────────────────────────────────────── */
 #about p {
   color: var(--text-body);
   line-height: 1.75;
   font-size: 1rem;
+}
+
+#about p + p {
+  margin-top: 0.75rem;
 }
 
 /* ─── What I Do ──────────────────────────────────── */
@@ -169,6 +266,31 @@ main {
 .timeline-desc {
   font-size: 0.9rem;
   color: var(--text-body);
+}
+
+/* ─── Timeline tags ──────────────────────────────── */
+.timeline-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 8px;
+}
+
+.tag {
+  font-size: 0.7rem;
+  color: var(--accent);
+  background: #e0e7ff;
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-weight: 500;
+}
+
+.tag--more {
+  background: none;
+  color: var(--text-muted);
+  padding-left: 2px;
+  padding-right: 0;
+  letter-spacing: 0.1em;
 }
 
 /* ─── Contact ────────────────────────────────────── */
