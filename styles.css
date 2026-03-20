@@ -189,17 +189,26 @@ main {
   position: relative;
   overflow: hidden;
   border-radius: 4px;
+  background: white;
 }
 
-.mc { border-radius: 3px; background: #c7d2fe; }
-.mc.c2 { background: #a5b4fc; }
-.mc.c3 { background: #818cf8; }
+.mc {
+  border-radius: 3px;
+  background: linear-gradient(90deg, #818cf8, #dde4ff);
+  background-size: 800% 100%;
+}
+.mc:nth-child(5n+2) { background-position: 0% 0%; }    /* Plan    */
+.mc:nth-child(5n+3) { background-position: 25% 0%; }   /* Build   */
+.mc:nth-child(5n+4) { background-position: 50% 0%; }   /* Test    */
+.mc:nth-child(5n+5) { background-position: 75% 0%; }   /* Ship    */
+.mc:nth-child(5n+1) { background-position: 100% 0%; }  /* Monitor */
 
 @keyframes matrix-scan {
   0%   { left: -4%;  opacity: 0; }
-  5%   { opacity: 1; }
-  95%  { opacity: 1; }
-  100% { left: 104%; opacity: 0; }
+  4%   { opacity: 1; }
+  36%  { opacity: 1; left: 104%; }
+  37%  { opacity: 0; left: 104%; }
+  100% { opacity: 0; left: -4%; }
 }
 
 .matrix-scan {
@@ -208,9 +217,9 @@ main {
   bottom: 0;
   width: 4px;
   background: linear-gradient(180deg, transparent, white 30%, white 70%, transparent);
-  opacity: 0.7;
+  opacity: 0.5;
   filter: blur(2px);
-  animation: matrix-scan 3s ease-in-out infinite;
+  animation: matrix-scan 7s ease-in-out infinite;
   z-index: 2;
   pointer-events: none;
 }
