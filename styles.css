@@ -203,25 +203,8 @@ main {
 .mc:nth-child(5n+5) { background-position: 75% 0%; }   /* Ship    */
 .mc:nth-child(5n+1) { background-position: 100% 0%; }  /* Monitor */
 
-@keyframes matrix-scan {
-  0%   { left: -4%;  opacity: 0; }
-  4%   { opacity: 1; }
-  36%  { opacity: 1; left: 104%; }
-  37%  { opacity: 0; left: 104%; }
-  100% { opacity: 0; left: -4%; }
-}
-
 .matrix-scan {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 4px;
-  background: linear-gradient(180deg, transparent, white 30%, white 70%, transparent);
-  opacity: 0.5;
-  filter: blur(2px);
-  animation: matrix-scan 7s ease-in-out infinite;
-  z-index: 2;
-  pointer-events: none;
+  display: none;
 }
 
 /* ─── About ──────────────────────────────────────── */
